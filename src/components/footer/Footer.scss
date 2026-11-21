@@ -1,0 +1,23 @@
+@import "../../_globalColor";
+
+.footer-text {
+  text-align: center;
+  color: #708090 !important;
+  font-size: 14px;
+}
+
+.footer-text a {
+  color: #0D9488 !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+  color: #0F766E !important;
+}
+
+.footer-div {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}

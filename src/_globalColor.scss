@@ -1,0 +1,89 @@
+/* Global SCSS Color System - Pure White + Steel Grey + Graphite + Subtle Blue */
+
+// Button colors
+$buttonColor: #0D9488;
+$buttonHover: #0F766E;
+$topButtonHover: #0F766E;
+
+// Text colors
+$titleColor: #171C24;
+$textColor: #475569;
+$subTitle: #64748B;
+$cardSubtitle: #64748B;
+$talkCardSubTitle: #708090;
+$blogCardTitleColor: #171C24;
+
+// Even if legacy components reference dark mode, force dark graphite readable text
+$textColorDark: #171C24;
+
+// Toggle switch colors
+$toggleCheck: #0D9488;
+$toggleSwitchSliderBG: #DCE2E9;
+
+// GitHubRepo specific colors
+$githubRepoCardLanguageColorBG: #0D9488;
+$githubRepoCardColor: #475569;
+$githubRepoCardRepoCardStatsColor: #708090;
+$githubRepoCardRepoNameColor: #171C24;
+$githubProfileCardLocationTS: #475569;
+$githubProfileCardBorder: #0D9488;
+
+// Light background colors
+$lightBackground1: #FFFFFF;
+$lightBackground2: #F5F7FA;
+$lightBackground3: #F0FDFA;
+$blogCardContainerColor: #475569;
+
+// Prevent any dark backgrounds
+$darkBackground: #FFFFFF;
+
+// Box shadows
+$lightBoxShadowDark: rgba(23, 28, 36, 0.06);
+$lightBoxShadow: rgba(23, 28, 36, 0.03);
+$lightBoxShadowDarker: rgba(23, 28, 36, 0.08);
+
+$darkBoxShadow: rgba(23, 28, 36, 0.06);
+$darkBoxShadow2: rgba(23, 28, 36, 0.08);
+
+// Gradients
+$experienceCardBlurredDivLG: linear-gradient(
+  rgba(245, 247, 250, 0.6),
+  rgba(237, 243, 250, 0.3)
+);
+$experienceCardBannerLG: linear-gradient(
+  135deg,
+  #F5F7FA 0%,
+  #DCE2E9 100%
+);
+
+// Borders
+$progressBarBackground: #DCE2E9;
+$lightBorder1: #DCE2E9;
+$educationCardBorder: #0D9488;
+
+// Hovers
+$achievementCertificateCardHoverDark: rgba(13, 148, 136, 0.1);
+$blogCardHoverSmallColor: #171C24;
+$headerHoverBG: #F5F7FA;
+$contactDetailHoverTS: #708090;
+
+// Misc backgrounds
+$progressBarSpanBG: #0D9488;
+$iconBackground: #F0FDFA;
+$appHeaderBG: #FFFFFF;
+
+// Misc colors
+$skillsColor: #0D9488;
+$appLink: #0D9488;
+
+// Social media brand colors
+$faceBook: #3b5998;
+$linkedin: #0077b5;
+$github: #171C24;
+$gitlab: #fc6d26;
+$google: #ea4335;
+$twitter: #1da1f2;
+$medium: #171C24;
+$stackoverflow: #f48024;
+$instagram: #e1306c;
+$kaggle: #20beff;

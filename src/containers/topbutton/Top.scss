@@ -1,0 +1,25 @@
+@import "../../_globalColor";
+
+#topButton {
+  visibility: hidden;
+  position: fixed;
+  bottom: 24px;
+  right: 28px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #0D9488;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+  transition: all ease-in-out 0.2s;
+}
+
+#topButton:hover {
+  background-color: #0F766E;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13, 148, 136, 0.4);
+}

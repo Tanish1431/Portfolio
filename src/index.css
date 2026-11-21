@@ -1,0 +1,436 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   GLOBAL DESIGN TOKENS (PURE WHITE + STEEL GREY + GRAPHITE + SUBTLE BLUE)
+   ========================================================================== */
+
+:root {
+  --color-background: #FFFFFF;
+  --color-background-alt: #F5F7FA;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F8FAFC;
+
+  --color-heading: #171C24;
+  --color-text: #475569;
+  --color-text-secondary: #64748B;
+  --color-muted: #708090;
+
+  --color-accent: #0D9488;
+  --color-accent-hover: #0F766E;
+  --color-accent-soft: #F0FDFA;
+
+  --color-border: #DCE2E9;
+  --color-border-strong: #C5CFDA;
+
+  --color-steel: #708090;
+
+  /* Typography Defaults */
+  --font-heading: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Card & Interaction Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(23, 28, 36, 0.03);
+  --shadow-md: 0 4px 12px -2px rgba(23, 28, 36, 0.05), 0 2px 6px -1px rgba(23, 28, 36, 0.03);
+  --shadow-lg: 0 10px 25px -5px rgba(23, 28, 36, 0.06), 0 6px 12px -3px rgba(23, 28, 36, 0.03);
+  --shadow-card: 0 1px 3px rgba(23, 28, 36, 0.04), 0 4px 12px -2px rgba(23, 28, 36, 0.03);
+  --shadow-card-hover: 0 4px 6px -1px rgba(23, 28, 36, 0.05), 0 12px 24px -4px rgba(23, 28, 36, 0.08);
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --header-height: 72px;
+}
+
+/* ==========================================================================
+   GLOBAL RESET & BASE STYLES - GUARANTEED HIGH CONTRAST
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  background-color: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #475569;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Headings default to dark graphite */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: #171C24 !important;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #475569;
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background-color: #0D9488;
+  color: #FFFFFF;
+}
+
+:focus-visible {
+  outline: 2px solid #0D9488;
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F7FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5CFDA;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #708090;
+}
+
+/* ==========================================================================
+   SECTION ALTERNATION TOKENS (LIGHT ONLY - NEVER DARK)
+   ========================================================================== */
+
+.section-white {
+  background-color: #FFFFFF !important;
+  color: #475569 !important;
+  padding: 4rem 0;
+  border-bottom: 1px solid #DCE2E9;
+}
+
+.section-white h1,
+.section-white h2,
+.section-white h3,
+.section-white .heading,
+.section-white .project-title,
+.section-white .skills-heading {
+  color: #171C24 !important;
+}
+
+.section-white p,
+.section-white .subTitle,
+.section-white .project-subtitle {
+  color: #475569 !important;
+}
+
+.section-alt {
+  background-color: #F5F7FA !important;
+  color: #475569 !important;
+  padding: 4rem 0;
+  border-bottom: 1px solid #DCE2E9;
+}
+
+.section-alt h1,
+.section-alt h2,
+.section-alt h3,
+.section-alt .heading,
+.section-alt .experience-heading,
+.section-alt .education-heading,
+.section-alt .achievement-heading {
+  color: #171C24 !important;
+}
+
+.section-alt p,
+.section-alt .subTitle,
+.section-alt .achievement-subtitle {
+  color: #475569 !important;
+}
+
+/* Backwards-compatibility safety: Ensure .dark-mode NEVER sets white text on white backgrounds */
+.dark-mode {
+  background-color: #FFFFFF !important;
+  color: #475569 !important;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode .heading,
+.dark-mode-text {
+  color: #171C24 !important;
+}
+
+.dark-mode p,
+.dark-mode .subTitle {
+  color: #475569 !important;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY SCALES
+   ========================================================================== */
+
+.type-hero {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #171C24 !important;
+}
+
+.type-h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.875rem, 3.2vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #171C24 !important;
+}
+
+.type-h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #171C24 !important;
+}
+
+.type-h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: #171C24 !important;
+}
+
+.type-body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: #475569;
+}
+
+.type-body-sm {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #64748B;
+}
+
+.type-mono {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   LAYOUT & CONTAINER
+   ========================================================================== */
+
+.content-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .content-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   BUTTONS & CARDS
+   ========================================================================== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #0D9488;
+  color: #FFFFFF !important;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(13, 148, 136, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #0F766E;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(13, 148, 136, 0.3);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #FFFFFF;
+  color: #171C24 !important;
+  border: 1px solid #DCE2E9;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  border-color: #C5CFDA;
+  background-color: #F8FAFC;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.premium-card {
+  background-color: #FFFFFF;
+  border: 1px solid #DCE2E9;
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.premium-card:hover {
+  border-color: #C5CFDA;
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+/* Legacy helper overrides */
+.subTitle {
+  color: #64748B !important;
+}
+
+.heading {
+  color: #171C24 !important;
+  font-family: var(--font-heading) !important;
+}
+
+/* ==========================================================================
+   LEGACY CONTAINER STYLING
+   ========================================================================== */
+
+/* .main is used by legacy containers (Projects, Achievements, Blogs, Contact) */
+.main {
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  color: #475569;
+}
+
+/* Skills heading used by StartupProject */
+.skills-heading {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: normal;
+  color: #171C24 !important;
+  font-family: var(--font-heading);
+}
+
+@media (max-width: 1380px) {
+  .skills-heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-heading {
+    font-size: 30px;
+    text-align: center;
+  }
+  .main {
+    width: 100%;
+    padding: 20px 15px;
+  }
+}
+
+/* Ensure dark-mode class never allows dark backgrounds on project cards */
+.dark-mode.project-card,
+.dark-mode.project-card-dark,
+.project-card-dark {
+  background-color: #FFFFFF !important;
+  border-color: #DCE2E9 !important;
+  color: #475569 !important;
+}
+
+.dark-mode.project-card .card-title,
+.project-card-dark .card-title,
+.dark-mode .card-title {
+  color: #171C24 !important;
+}
+
+.dark-mode.project-card .card-subtitle,
+.project-card-dark .card-subtitle,
+.dark-mode .card-subtitle {
+  color: #64748B !important;
+}
+
+/* Dark mode project tags - ensure correct colors */
+.dark-mode.project-tag,
+.dark-mode .project-tag {
+  background: #F0FDFA !important;
+  color: #0D9488 !important;
+  border-color: #DCE2E9 !important;
+}
+
+/* Legacy dark mode certificate tags */
+.dark-mode.certificate-tag,
+.dark-mode .certificate-tag {
+  background: #F0FDFA !important;
+  color: #0D9488 !important;
+  border-color: #DCE2E9 !important;
+}
+
+/* Ensure all legacy section containers have consistent styling */
+.achievement-main-div,
+.contact-div-main,
+.blog-header {
+  color: #475569;
+}
+
+/* Override any stray dark text on colored backgrounds */
+.dark-mode-text {
+  color: #171C24 !important;
+}

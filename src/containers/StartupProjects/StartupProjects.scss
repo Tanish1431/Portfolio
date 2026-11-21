@@ -1,0 +1,119 @@
+@import "../../_globalColor";
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  width: 250px;
+  border-radius: 8px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.project-card:hover .card-image {
+  transform: scale(1.03);
+}
+
+.card-title {
+  color: #171C24 !important;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  margin: 15px 0 0 0;
+  font-family: var(--font-heading);
+}
+
+.card-subtitle {
+  color: #64748B !important;
+  font-size: 15px;
+  line-height: 1.55;
+  margin-top: 6px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: 14px;
+  border: 1px solid #DCE2E9;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(23, 28, 36, 0.04), 0 4px 12px -2px rgba(23, 28, 36, 0.03);
+  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.project-card-light,
+.project-card-dark {
+  background-color: #FFFFFF !important;
+  border: 1px solid #DCE2E9 !important;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  border-color: #C5CFDA !important;
+  box-shadow: 0 4px 6px -1px rgba(23, 28, 36, 0.05), 0 12px 24px -4px rgba(23, 28, 36, 0.08) !important;
+}
+
+.project-detail {
+  text-align: center;
+}
+
+.project-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5F7FA;
+  border-radius: 10px;
+  border: 1px solid #DCE2E9;
+  padding: 1rem;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-card-footer span.project-tag {
+  background: #F0FDFA;
+  color: #0D9488;
+  border: 1px solid #DCE2E9;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 6px;
+  display: inline-flex;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  height: 2.2em;
+  justify-content: center;
+  white-space: nowrap;
+  line-height: 1.5;
+  margin: 1rem 0.5rem 0 0;
+  padding: 0 1em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.project-card-footer span.project-tag:hover {
+  background: #0D9488;
+  color: #FFFFFF;
+  border-color: #0D9488;
+}
+
+.project-tech-stack {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #0D9488 !important;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .project-subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import About from "./about/About";
@@ -10,7 +10,7 @@ import Achievement from "./achievement/Achievement";
 import Contact from "./contact/Contact";
 import Footer from "../components/footer/Footer";
 import ScrollToTopButton from "./topbutton/Top";
-import { StyleProvider } from "../contexts/StyleContext";
+import {StyleProvider} from "../contexts/StyleContext";
 import "./Main.scss";
 
 const Main = () => {
@@ -25,7 +25,7 @@ const Main = () => {
 
   return (
     <div className="main-content">
-      <StyleProvider value={{ isDark: false, changeTheme: () => {} }}>
+      <StyleProvider value={{isDark: false, changeTheme: () => {}}}>
         <Header />
 
         {/* 1. Hero Section */}

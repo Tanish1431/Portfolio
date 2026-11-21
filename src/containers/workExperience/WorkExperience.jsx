@@ -1,7 +1,7 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
-import { Briefcase, Calendar, ChevronRight } from "lucide-react";
-import { workExperiences } from "../../portfolio";
+import {motion, useReducedMotion} from "framer-motion";
+import {Briefcase, Calendar, ChevronRight} from "lucide-react";
+import {workExperiences} from "../../portfolio";
 import "./WorkExperience.scss";
 
 export default function WorkExperience() {
@@ -10,14 +10,14 @@ export default function WorkExperience() {
   if (!workExperiences.display) return null;
 
   const fadeIn = (delay = 0, y = 20) => ({
-    initial: { opacity: 0, y: shouldReduceMotion ? 0 : y },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-40px" },
+    initial: {opacity: 0, y: shouldReduceMotion ? 0 : y},
+    whileInView: {opacity: 1, y: 0},
+    viewport: {once: true, margin: "-40px"},
     transition: {
       duration: shouldReduceMotion ? 0.1 : 0.5,
       delay: shouldReduceMotion ? 0 : delay,
-      ease: [0.25, 0.1, 0.25, 1],
-    },
+      ease: [0.25, 0.1, 0.25, 1]
+    }
   });
 
   return (
@@ -46,16 +46,24 @@ export default function WorkExperience() {
             >
               {/* Timeline marker with spring entrance */}
               <motion.div
-                initial={{ scale: shouldReduceMotion ? 1 : 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 400, damping: 25, delay: 0.15 + i * 0.1 }}
+                initial={{scale: shouldReduceMotion ? 1 : 0}}
+                whileInView={{scale: 1}}
+                viewport={{once: true}}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                  delay: 0.15 + i * 0.1
+                }}
                 className="absolute left-2.5 sm:left-4 top-2 w-3.5 h-3.5 rounded-full bg-[#0D9488] border-2 border-white shadow-sm ring-4 ring-[#F0FDFA]"
               />
 
               {/* Experience Card */}
               <motion.div
-                whileHover={{ y: shouldReduceMotion ? 0 : -3, transition: { duration: 0.2 } }}
+                whileHover={{
+                  y: shouldReduceMotion ? 0 : -3,
+                  transition: {duration: 0.2}
+                }}
                 className="p-5 sm:p-6 rounded-xl border border-[#DCE2E9] bg-white shadow-card hover:shadow-card-hover hover:border-[#0D9488]/40 transition-all duration-200"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
@@ -83,7 +91,10 @@ export default function WorkExperience() {
                 {exp.descBullets && (
                   <ul className="space-y-2 pt-2 border-t border-[#DCE2E9]/60">
                     {exp.descBullets.map((bullet, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-[#475569]">
+                      <li
+                        key={j}
+                        className="flex items-start gap-2 text-sm text-[#475569]"
+                      >
                         <ChevronRight className="w-4 h-4 text-[#0D9488] mt-0.5 flex-shrink-0" />
                         <span>{bullet}</span>
                       </li>

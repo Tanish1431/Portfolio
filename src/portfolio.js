@@ -14,7 +14,8 @@ const greeting = {
   subTitle:
     "Computer Science undergraduate passionate about building scalable full-stack applications, solving engineering problems and exploring cloud technologies.",
   role: "Full-Stack Developer | Software Engineer | Cloud & DevOps Enthusiast",
-  resumeLink: "https://drive.google.com/file/d/1Sqre3wQospJ_chdg7dq5tr-BCiAenwvP/view?usp=sharing",
+  resumeLink:
+    "https://drive.google.com/file/d/1Sqre3wQospJ_chdg7dq5tr-BCiAenwvP/view?usp=sharing",
   displayGreeting: true
 };
 
@@ -80,7 +81,14 @@ const skillsSection = {
     {
       id: "frontend",
       title: "Frontend Development",
-      skills: ["React.js", "Next.js", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS"]
+      skills: [
+        "React.js",
+        "Next.js",
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "Tailwind CSS"
+      ]
     },
     {
       id: "backend",
@@ -100,7 +108,15 @@ const skillsSection = {
     {
       id: "tools",
       title: "Tools & Libraries",
-      skills: ["Git", "GitHub", "Chart.js", "Cloudinary", "Mapbox", "MATLAB", "Excel"]
+      skills: [
+        "Git",
+        "GitHub",
+        "Chart.js",
+        "Cloudinary",
+        "Mapbox",
+        "MATLAB",
+        "Excel"
+      ]
     }
   ],
   display: true
@@ -114,7 +130,8 @@ const educationInfo = {
     {
       schoolName: "SRM Institute of Science and Technology",
       logo: "",
-      subHeader: "Bachelor of Technology (B.Tech) in Computer Science and Business Systems",
+      subHeader:
+        "Bachelor of Technology (B.Tech) in Computer Science and Business Systems",
       duration: "June 2023 – May 2027",
       desc: "CGPA: 9.09",
       descBullets: [
@@ -187,7 +204,8 @@ const bigProjects = {
       projectName: "AlphaDesk – Fintech Investment Platform",
       projectDesc:
         "A full-stack fintech investment platform on the MERN stack with 10+ RESTful API endpoints secured with JWT-based authentication. Features interactive Chart.js dashboards for 20+ stock listings and a 'Time Machine' feature to simulate historical investment returns.",
-      techStack: "React.js, React Router, Chart.js, Node.js, Express.js, MongoDB",
+      techStack:
+        "React.js, React Router, Chart.js, Node.js, Express.js, MongoDB",
       footerLink: [
         {
           name: "GitHub",

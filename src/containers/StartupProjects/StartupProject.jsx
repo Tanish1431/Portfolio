@@ -66,9 +66,7 @@ export default function StartupProject() {
                       {project.projectDesc}
                     </p>
                     {project.techStack && (
-                      <p className="project-tech-stack">
-                        {project.techStack}
-                      </p>
+                      <p className="project-tech-stack">{project.techStack}</p>
                     )}
                     {project.footerLink ? (
                       <div className="project-card-footer">

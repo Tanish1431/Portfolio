@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
 export const Fade = ({
   children,
@@ -15,7 +15,9 @@ export const Fade = ({
   ...props
 }) => {
   const distNum =
-    typeof distance === "string" ? parseInt(distance, 10) || 20 : distance || 20;
+    typeof distance === "string"
+      ? parseInt(distance, 10) || 20
+      : distance || 20;
 
   let initialX = 0;
   let initialY = 0;
@@ -27,19 +29,21 @@ export const Fade = ({
   else initialY = distNum;
 
   const durationSec =
-    typeof duration === "number" && duration > 10 ? duration / 1000 : duration || 0.8;
+    typeof duration === "number" && duration > 10
+      ? duration / 1000
+      : duration || 0.8;
   const delaySec =
     typeof delay === "number" && delay > 10 ? delay / 1000 : delay || 0;
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: initialX, y: initialY }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-20px" }}
+      initial={{opacity: 0, x: initialX, y: initialY}}
+      whileInView={{opacity: 1, x: 0, y: 0}}
+      viewport={{once: true, margin: "-20px"}}
       transition={{
         duration: durationSec,
         delay: delaySec,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: [0.25, 0.1, 0.25, 1]
       }}
       className={className}
       style={style}

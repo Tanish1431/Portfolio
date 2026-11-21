@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import {motion, useReducedMotion} from "framer-motion";
 import {
   GraduationCap,
   Award,
@@ -8,9 +8,9 @@ import {
   ArrowRight,
   Code2,
   Cloud,
-  Cpu,
+  Cpu
 } from "lucide-react";
-import { aboutSection } from "../../portfolio";
+import {aboutSection} from "../../portfolio";
 import "./About.scss";
 
 export default function About() {
@@ -21,22 +21,23 @@ export default function About() {
   }
 
   const fadeIn = (delay = 0, y = 20) => ({
-    initial: { opacity: 0, y: shouldReduceMotion ? 0 : y },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-40px" },
+    initial: {opacity: 0, y: shouldReduceMotion ? 0 : y},
+    whileInView: {opacity: 1, y: 0},
+    viewport: {once: true, margin: "-40px"},
     transition: {
       duration: shouldReduceMotion ? 0.1 : 0.5,
       delay: shouldReduceMotion ? 0 : delay,
-      ease: [0.25, 0.1, 0.25, 1],
-    },
+      ease: [0.25, 0.1, 0.25, 1]
+    }
   });
 
-  const handleScrollToSkills = (e) => {
+  const handleScrollToSkills = e => {
     e.preventDefault();
     const target = document.getElementById("skills");
     if (target) {
-      const offsetTop = target.getBoundingClientRect().top + window.scrollY - 70;
-      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+      const offsetTop =
+        target.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({top: offsetTop, behavior: "smooth"});
     }
   };
 
@@ -114,13 +115,16 @@ export default function About() {
               0: <GraduationCap className="w-5 h-5 text-[#0D9488]" />,
               1: <Award className="w-5 h-5 text-[#0D9488]" />,
               2: <Calendar className="w-5 h-5 text-[#0D9488]" />,
-              3: <Layers className="w-5 h-5 text-[#0D9488]" />,
+              3: <Layers className="w-5 h-5 text-[#0D9488]" />
             };
 
             return (
               <motion.div
                 key={index}
-                whileHover={{ y: shouldReduceMotion ? 0 : -3, transition: { duration: 0.2 } }}
+                whileHover={{
+                  y: shouldReduceMotion ? 0 : -3,
+                  transition: {duration: 0.2}
+                }}
                 className="p-5 rounded-xl border border-[#DCE2E9] bg-white shadow-card hover:shadow-card-hover hover:border-[#0D9488]/40 transition-all duration-200 text-left group"
               >
                 <div className="flex items-start justify-between mb-2">

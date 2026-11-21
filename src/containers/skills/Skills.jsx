@@ -1,23 +1,16 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
-import {
-  Code2,
-  Layout,
-  Server,
-  Database,
-  Cloud,
-  Wrench,
-} from "lucide-react";
-import { skillsSection } from "../../portfolio";
+import {motion, useReducedMotion} from "framer-motion";
+import {Code2, Layout, Server, Database, Cloud, Wrench} from "lucide-react";
+import {skillsSection} from "../../portfolio";
 import "./Skills.scss";
 
 const categoryMeta = {
-  languages: { icon: <Code2 className="w-5 h-5 text-[#0D9488]" /> },
-  frontend: { icon: <Layout className="w-5 h-5 text-[#0D9488]" /> },
-  backend: { icon: <Server className="w-5 h-5 text-[#0D9488]" /> },
-  databases: { icon: <Database className="w-5 h-5 text-[#0D9488]" /> },
-  "cloud-devops": { icon: <Cloud className="w-5 h-5 text-[#0D9488]" /> },
-  tools: { icon: <Wrench className="w-5 h-5 text-[#0D9488]" /> },
+  languages: {icon: <Code2 className="w-5 h-5 text-[#0D9488]" />},
+  frontend: {icon: <Layout className="w-5 h-5 text-[#0D9488]" />},
+  backend: {icon: <Server className="w-5 h-5 text-[#0D9488]" />},
+  databases: {icon: <Database className="w-5 h-5 text-[#0D9488]" />},
+  "cloud-devops": {icon: <Cloud className="w-5 h-5 text-[#0D9488]" />},
+  tools: {icon: <Wrench className="w-5 h-5 text-[#0D9488]" />}
 };
 
 export default function Skills() {
@@ -28,16 +21,16 @@ export default function Skills() {
   }
 
   const cardVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
-    visible: (i) => ({
+    hidden: {opacity: 0, y: shouldReduceMotion ? 0 : 20},
+    visible: i => ({
       opacity: 1,
       y: 0,
       transition: {
         duration: shouldReduceMotion ? 0.1 : 0.45,
         delay: shouldReduceMotion ? 0 : i * 0.07,
-        ease: [0.25, 0.1, 0.25, 1],
-      },
-    }),
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    })
   };
 
   return (
@@ -59,7 +52,7 @@ export default function Skills() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillsSection.categories.map((category, index) => {
           const meta = categoryMeta[category.id] || {
-            icon: <Code2 className="w-5 h-5 text-[#0D9488]" />,
+            icon: <Code2 className="w-5 h-5 text-[#0D9488]" />
           };
 
           return (
@@ -68,9 +61,12 @@ export default function Skills() {
               custom={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-40px" }}
+              viewport={{once: true, margin: "-40px"}}
               variants={cardVariants}
-              whileHover={{ y: shouldReduceMotion ? 0 : -3, transition: { duration: 0.2 } }}
+              whileHover={{
+                y: shouldReduceMotion ? 0 : -3,
+                transition: {duration: 0.2}
+              }}
               className="rounded-xl border border-[#DCE2E9] bg-white p-6 flex flex-col justify-between shadow-card hover:shadow-card-hover hover:border-[#0D9488]/40 transition-all duration-300 text-left group"
             >
               {/* Category Header */}
@@ -91,7 +87,7 @@ export default function Skills() {
 
               {/* Skill Badges Flow */}
               <div className="flex flex-wrap gap-2 pt-3 border-t border-[#DCE2E9]">
-                {category.skills.map((skill) => (
+                {category.skills.map(skill => (
                   <span
                     key={skill}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F5F7FA] hover:bg-[#F0FDFA] border border-[#DCE2E9] hover:border-[#0D9488]/40 text-xs font-mono font-medium text-[#171C24] transition-all duration-200 cursor-default"

@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
-const resumeLink = "https://drive.google.com/file/d/1Sqre3wQospJ_chdg7dq5tr-BCiAenwvP/view?usp=sharing";
+import React, {useState, useEffect} from "react";
+import {motion, AnimatePresence} from "framer-motion";
+import {Menu, X, Download} from "lucide-react";
+const resumeLink =
+  "https://drive.google.com/file/d/1Sqre3wQospJ_chdg7dq5tr-BCiAenwvP/view?usp=sharing";
 
 const navLinks = [
-  { name: "Home", href: "#greeting", id: "greeting" },
-  { name: "About", href: "#about", id: "about" },
-  { name: "Skills", href: "#skills", id: "skills" },
-  { name: "Experience", href: "#experience", id: "experience" },
-  { name: "Projects", href: "#projects", id: "projects" },
-  { name: "Contact", href: "#contact", id: "contact" },
+  {name: "Home", href: "#greeting", id: "greeting"},
+  {name: "About", href: "#about", id: "about"},
+  {name: "Skills", href: "#skills", id: "skills"},
+  {name: "Experience", href: "#experience", id: "experience"},
+  {name: "Projects", href: "#projects", id: "projects"},
+  {name: "Contact", href: "#contact", id: "contact"}
 ];
 
 export default function Header() {
@@ -21,7 +22,14 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sectionIds = ["greeting", "about", "skills", "experience", "projects", "contact"];
+      const sectionIds = [
+        "greeting",
+        "about",
+        "skills",
+        "experience",
+        "projects",
+        "contact"
+      ];
       const scrollY = window.scrollY + 120;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -37,7 +45,7 @@ export default function Header() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {passive: true});
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -48,10 +56,11 @@ export default function Header() {
     const targetId = href.replace("#", "");
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      const offsetTop = targetElement.getBoundingClientRect().top + window.scrollY - 70;
+      const offsetTop =
+        targetElement.getBoundingClientRect().top + window.scrollY - 70;
       window.scrollTo({
         top: offsetTop,
-        behavior: "smooth",
+        behavior: "smooth"
       });
     }
   };
@@ -68,7 +77,7 @@ export default function Header() {
         {/* Personal Logo */}
         <a
           href="#greeting"
-          onClick={(e) => handleNavClick(e, "#greeting")}
+          onClick={e => handleNavClick(e, "#greeting")}
           className="flex items-center gap-0.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] rounded-md py-1"
           aria-label="Tanish Khandelwal Home"
         >
@@ -82,13 +91,13 @@ export default function Header() {
           className="hidden md:flex items-center gap-1 lg:gap-2"
           aria-label="Main Navigation"
         >
-          {navLinks.map((link) => {
+          {navLinks.map(link => {
             const isActive = activeSection === link.id;
             return (
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={e => handleNavClick(e, link.href)}
                 className={`relative px-3.5 py-1.5 text-xs lg:text-sm font-medium tracking-wide transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] ${
                   isActive
                     ? "text-[#171C24] font-bold"
@@ -100,7 +109,7 @@ export default function Header() {
                   <motion.span
                     layoutId="activeNavIndicator"
                     className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-[#0D9488] rounded-full"
-                    transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                    transition={{type: "spring", stiffness: 450, damping: 35}}
                   />
                 )}
               </a>
@@ -142,20 +151,20 @@ export default function Header() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            initial={{opacity: 0, height: 0}}
+            animate={{opacity: 1, height: "auto"}}
+            exit={{opacity: 0, height: 0}}
+            transition={{duration: 0.2, ease: "easeInOut"}}
             className="md:hidden overflow-hidden bg-white border-b border-[#DCE2E9] px-6 pt-3 pb-6 space-y-2 shadow-lg"
           >
             <div className="flex flex-col space-y-1">
-              {navLinks.map((link) => {
+              {navLinks.map(link => {
                 const isActive = activeSection === link.id;
                 return (
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
+                    onClick={e => handleNavClick(e, link.href)}
                     className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                       isActive
                         ? "bg-[#F0FDFA] text-[#171C24] font-bold border-l-3 border-[#0D9488]"

@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, {useContext} from "react";
 import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import { illustration, contactInfo } from "../../portfolio";
-import { Fade } from "react-reveal";
+import {illustration, contactInfo} from "../../portfolio";
+import {Fade} from "react-reveal";
 import email from "../../assets/lottie/email";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
@@ -10,7 +10,7 @@ import contactMailDark from "../../assets/images/contactMailDark.svg";
 import contactMail from "../../assets/images/contactMail.webp";
 
 export default function Contact() {
-  const { isDark } = useContext(StyleContext);
+  const {isDark} = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main contact-margin-top" id="contact">

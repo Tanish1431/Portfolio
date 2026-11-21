@@ -1,7 +1,7 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
-import { GraduationCap, Calendar, Award } from "lucide-react";
-import { educationInfo } from "../../portfolio";
+import {motion, useReducedMotion} from "framer-motion";
+import {GraduationCap, Calendar, Award} from "lucide-react";
+import {educationInfo} from "../../portfolio";
 import "./Education.scss";
 
 export default function Education() {
@@ -10,14 +10,14 @@ export default function Education() {
   if (!educationInfo.display) return null;
 
   const fadeIn = (delay = 0, y = 20) => ({
-    initial: { opacity: 0, y: shouldReduceMotion ? 0 : y },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-40px" },
+    initial: {opacity: 0, y: shouldReduceMotion ? 0 : y},
+    whileInView: {opacity: 1, y: 0},
+    viewport: {once: true, margin: "-40px"},
     transition: {
       duration: shouldReduceMotion ? 0.1 : 0.5,
       delay: shouldReduceMotion ? 0 : delay,
-      ease: [0.25, 0.1, 0.25, 1],
-    },
+      ease: [0.25, 0.1, 0.25, 1]
+    }
   });
 
   return (
@@ -36,7 +36,10 @@ export default function Education() {
           <motion.div
             key={i}
             {...fadeIn(0.15 + i * 0.1, 20)}
-            whileHover={{ y: shouldReduceMotion ? 0 : -3, transition: { duration: 0.2 } }}
+            whileHover={{
+              y: shouldReduceMotion ? 0 : -3,
+              transition: {duration: 0.2}
+            }}
             className="p-6 sm:p-8 rounded-xl border border-[#DCE2E9] bg-white shadow-card hover:shadow-card-hover hover:border-[#0D9488]/40 transition-all text-left"
           >
             <div className="flex flex-col sm:flex-row gap-6">
@@ -72,7 +75,10 @@ export default function Education() {
                 {school.descBullets && school.descBullets.length > 0 && (
                   <ul className="space-y-2 mt-3 pt-3 border-t border-[#DCE2E9]/60">
                     {school.descBullets.map((bullet, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-[#475569]">
+                      <li
+                        key={j}
+                        className="flex items-start gap-2 text-sm text-[#475569]"
+                      >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] mt-2 flex-shrink-0" />
                         <span>{bullet}</span>
                       </li>

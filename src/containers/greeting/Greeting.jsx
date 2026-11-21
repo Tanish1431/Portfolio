@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import {motion, useReducedMotion} from "framer-motion";
 import {
   ArrowRight,
   Download,
@@ -9,40 +9,41 @@ import {
   ChevronDown,
   Terminal,
   Code2,
-  Sparkles,
+  Sparkles
 } from "lucide-react";
-const resumeLink = "https://drive.google.com/file/d/1Sqre3wQospJ_chdg7dq5tr-BCiAenwvP/view?usp=sharing";
-import { greeting, socialMediaLinks } from "../../portfolio";
+const resumeLink =
+  "https://drive.google.com/file/d/1Sqre3wQospJ_chdg7dq5tr-BCiAenwvP/view?usp=sharing";
+import {greeting, socialMediaLinks} from "../../portfolio";
 import "./Greeting.scss";
 
 export default function Greeting() {
   const shouldReduceMotion = useReducedMotion();
 
   const fadeIn = (delay = 0, y = 20) => ({
-    initial: { opacity: 0, y: shouldReduceMotion ? 0 : y },
-    animate: { opacity: 1, y: 0 },
+    initial: {opacity: 0, y: shouldReduceMotion ? 0 : y},
+    animate: {opacity: 1, y: 0},
     transition: {
       duration: shouldReduceMotion ? 0.1 : 0.5,
       delay: shouldReduceMotion ? 0 : delay,
-      ease: [0.25, 0.1, 0.25, 1],
-    },
+      ease: [0.25, 0.1, 0.25, 1]
+    }
   });
 
-  const handleScrollToProjects = (e) => {
+  const handleScrollToProjects = e => {
     e.preventDefault();
     const target = document.getElementById("projects");
     if (target) {
       const top = target.getBoundingClientRect().top + window.scrollY - 70;
-      window.scrollTo({ top, behavior: "smooth" });
+      window.scrollTo({top, behavior: "smooth"});
     }
   };
 
-  const handleScrollDown = (e) => {
+  const handleScrollDown = e => {
     e.preventDefault();
     const target = document.getElementById("about");
     if (target) {
       const top = target.getBoundingClientRect().top + window.scrollY - 70;
-      window.scrollTo({ top, behavior: "smooth" });
+      window.scrollTo({top, behavior: "smooth"});
     }
   };
 
@@ -54,10 +55,8 @@ export default function Greeting() {
       {/* Main Content Grid */}
       <div className="content-container my-auto z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-
           {/* Left Column: Hero Information */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
-
             {/* Live Availability Status Pill */}
             <motion.div
               {...fadeIn(0.1, 15)}
@@ -105,8 +104,8 @@ export default function Greeting() {
               className="flex flex-wrap items-center gap-4 mb-10"
             >
               <motion.a
-                whileHover={{ y: shouldReduceMotion ? 0 : -2 }}
-                whileTap={{ y: 0 }}
+                whileHover={{y: shouldReduceMotion ? 0 : -2}}
+                whileTap={{y: 0}}
                 href="#projects"
                 onClick={handleScrollToProjects}
                 className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-[#0D9488] hover:bg-[#0F766E] text-white font-heading font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md"
@@ -116,8 +115,8 @@ export default function Greeting() {
               </motion.a>
 
               <motion.a
-                whileHover={{ y: shouldReduceMotion ? 0 : -2 }}
-                whileTap={{ y: 0 }}
+                whileHover={{y: shouldReduceMotion ? 0 : -2}}
+                whileTap={{y: 0}}
                 href={resumeLink}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -139,7 +138,7 @@ export default function Greeting() {
 
               {socialMediaLinks.github && (
                 <motion.a
-                  whileHover={{ y: shouldReduceMotion ? 0 : -2 }}
+                  whileHover={{y: shouldReduceMotion ? 0 : -2}}
                   href={socialMediaLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -152,7 +151,7 @@ export default function Greeting() {
 
               {socialMediaLinks.linkedin && (
                 <motion.a
-                  whileHover={{ y: shouldReduceMotion ? 0 : -2 }}
+                  whileHover={{y: shouldReduceMotion ? 0 : -2}}
                   href={socialMediaLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -165,7 +164,7 @@ export default function Greeting() {
 
               {socialMediaLinks.gmail && (
                 <motion.a
-                  whileHover={{ y: shouldReduceMotion ? 0 : -2 }}
+                  whileHover={{y: shouldReduceMotion ? 0 : -2}}
                   href={`mailto:${socialMediaLinks.gmail}`}
                   className="p-2.5 rounded-lg text-[#475569] hover:text-[#0D9488] hover:bg-[#F0FDFA] border border-[#DCE2E9] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488]"
                   aria-label="Email Tanish"
@@ -179,10 +178,20 @@ export default function Greeting() {
           {/* Right Column: Light Code Editor Terminal Card */}
           <div className="lg:col-span-5 flex justify-center w-full">
             <motion.div
-              initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.96, y: shouldReduceMotion ? 0 : 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: shouldReduceMotion ? 0.1 : 0.6, delay: 0.3 }}
-              whileHover={{ y: shouldReduceMotion ? 0 : -4, transition: { duration: 0.25 } }}
+              initial={{
+                opacity: 0,
+                scale: shouldReduceMotion ? 1 : 0.96,
+                y: shouldReduceMotion ? 0 : 20
+              }}
+              animate={{opacity: 1, scale: 1, y: 0}}
+              transition={{
+                duration: shouldReduceMotion ? 0.1 : 0.6,
+                delay: 0.3
+              }}
+              whileHover={{
+                y: shouldReduceMotion ? 0 : -4,
+                transition: {duration: 0.25}
+              }}
               className="relative w-full max-w-lg"
             >
               {/* Developer Terminal Card — Light Editor Style */}
@@ -208,25 +217,38 @@ export default function Greeting() {
                 {/* Code Body */}
                 <div className="p-5 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto space-y-2">
                   <div className="text-[#64748B]">
-                    <span className="text-[#0D9488] font-bold">export const</span>{" "}
-                    <span className="text-[#171C24] font-semibold">engineer</span> = &#123;
+                    <span className="text-[#0D9488] font-bold">
+                      export const
+                    </span>{" "}
+                    <span className="text-[#171C24] font-semibold">
+                      engineer
+                    </span>{" "}
+                    = &#123;
                   </div>
 
                   <div className="pl-4">
                     <span className="text-[#64748B]">name:</span>{" "}
-                    <span className="text-[#15803D] font-medium">"Tanish Khandelwal"</span>,
+                    <span className="text-[#15803D] font-medium">
+                      "Tanish Khandelwal"
+                    </span>
+                    ,
                   </div>
 
                   <div className="pl-4">
                     <span className="text-[#64748B]">role:</span>{" "}
-                    <span className="text-[#15803D] font-medium">"Full-Stack Software Engineer"</span>,
+                    <span className="text-[#15803D] font-medium">
+                      "Full-Stack Software Engineer"
+                    </span>
+                    ,
                   </div>
 
                   <div className="pl-4">
                     <span className="text-[#64748B]">focus:</span>{" "}
                     <span className="text-[#171C24]">[</span>
-                    <span className="text-[#B45309]">"Scalable Architecture"</span>,{" "}
-                    <span className="text-[#B45309]">"Cloud"</span>,{" "}
+                    <span className="text-[#B45309]">
+                      "Scalable Architecture"
+                    </span>
+                    , <span className="text-[#B45309]">"Cloud"</span>,{" "}
                     <span className="text-[#B45309]">"DevOps"</span>
                     <span className="text-[#171C24]">]</span>,
                   </div>
@@ -234,7 +256,15 @@ export default function Greeting() {
                   <div className="pl-4">
                     <span className="text-[#64748B]">coreStack:</span> &#91;
                     <div className="pl-2 flex flex-wrap gap-1.5 my-2">
-                      {["Java", "React", "Node.js", "MongoDB", "Docker", "Kubernetes", "AWS"].map((tech) => (
+                      {[
+                        "Java",
+                        "React",
+                        "Node.js",
+                        "MongoDB",
+                        "Docker",
+                        "Kubernetes",
+                        "AWS"
+                      ].map(tech => (
                         <span
                           key={tech}
                           className="px-2 py-0.5 rounded bg-[#F5F7FA] border border-[#DCE2E9] text-xs font-medium text-[#171C24]"
@@ -249,9 +279,12 @@ export default function Greeting() {
                   <div className="pl-4">
                     <span className="text-[#64748B]">values:</span> &#123;
                     <div className="pl-4 text-xs text-[#475569]">
-                      cleanCode: <span className="text-[#0D9488] font-semibold">true</span>,
+                      cleanCode:{" "}
+                      <span className="text-[#0D9488] font-semibold">true</span>
+                      ,
                       <br />
-                      performanceFirst: <span className="text-[#0D9488] font-semibold">true</span>
+                      performanceFirst:{" "}
+                      <span className="text-[#0D9488] font-semibold">true</span>
                     </div>
                     <span className="text-[#171C24]">&#125;</span>
                   </div>
@@ -263,7 +296,9 @@ export default function Greeting() {
                 <div className="flex items-center justify-between px-4 py-2.5 border-t border-[#DCE2E9] bg-[#F5F7FA] text-[11px] font-mono text-[#708090]">
                   <span className="flex items-center gap-1.5">
                     <Code2 className="w-3.5 h-3.5 text-[#0D9488]" />
-                    <span className="font-medium text-[#475569]">Full-Stack Systems</span>
+                    <span className="font-medium text-[#475569]">
+                      Full-Stack Systems
+                    </span>
                   </span>
                   <span className="flex items-center gap-1 font-semibold text-emerald-700">
                     <Sparkles className="w-3 h-3" />
@@ -278,9 +313,9 @@ export default function Greeting() {
 
       {/* Subtle Scroll Down Indicator */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 0.5 }}
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{delay: 0.8, duration: 0.5}}
         className="flex justify-center pt-8 pb-2 z-10"
       >
         <a
